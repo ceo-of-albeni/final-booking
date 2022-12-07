@@ -1,0 +1,28 @@
+{
+  "places": [
+    {
+      "title": "Football Field",
+      "image": "https://operations.nfl.com/media/4056/field-certification-hero-2019.jpg?rxy=0.49446494464944651,0.58888888888888891&width=1417&height=740&rnd=132193570660000000&quality=85",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure id iste maxime et. Voluptatum beatae illum, repellat esse debitis",
+      "id": 8
+    },
+    {
+      "title": "Picnic Zones",
+      "image": "https://visitlakeiseo.info/wp-content/uploads/2020/10/Zone-004.jpg",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure id iste maxime et. Voluptatum beatae illum, repellat esse debitis",
+      "id": 9
+    }
+  ],
+  "users": [
+    {
+      "email": "aliia.malaeva@alatoo.edu.kg",
+      "password": "123",
+      "id": 1
+    },
+    {
+      "email": "aliia.malaeva@alatoo.edu.kg",
+      "password": "123",
+      "id": 2
+    }
+  ]
+}

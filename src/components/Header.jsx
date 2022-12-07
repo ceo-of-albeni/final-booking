@@ -1,20 +1,34 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+//my imports
 import { useNavigate } from "react-router-dom";
+import { authContext } from "../contexts/authContext";
 
 function NavScrollExample() {
   const navigate = useNavigate();
 
+  const { currentUser, checkAuth, handleLogout } = useContext(authContext);
+
+  // useEffect(() => {
+  //   if (localStorage.getItem("tokens")) {
+  //     checkAuth();
+  //   }
+  // }, []);
+
   return (
     <Navbar
       // fixed="top"
-      style={{ backgroundColor: "orange" }}
-      variant="dark"
+      style={{
+        background: "rgb(251,255,255)",
+        background:
+          "linear-gradient(90deg, rgba(251,255,255,1) 10%, rgba(249,191,85,1) 74%, rgba(255,165,0,1) 100%)",
+      }}
+      variant="light"
       expand="lg">
       <Container fluid>
         <Navbar.Brand onClick={() => navigate("/")}>
@@ -26,47 +40,36 @@ function NavScrollExample() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-danger">Search</Button>
-          </Form>
           <Nav
             className="me-auto my-2 my-lg-0"
             style={{ maxHeight: "100px" }}
             navbarScroll>
-            {/* <NavDropdown title="Account" id="navbarScrollingDropdown">
-              <NavDropdown.Item>Register</NavDropdown.Item>
-              <NavDropdown.Item>Login</NavDropdown.Item>
-              <NavDropdown.Item>Logout</NavDropdown.Item>
-            </NavDropdown> */}
-
-            <NavDropdown title="Category" id="navbarScrollingDropdown">
-              <NavDropdown.Item>Classes</NavDropdown.Item>
-              <NavDropdown.Item>Labs</NavDropdown.Item>
-              <NavDropdown.Item>Canteen</NavDropdown.Item>
+            <NavDropdown title="Places" id="navbarScrollingDropdown">
+              <NavDropdown.Item onClick={() => navigate("/add")}>
+                Add Place
+              </NavDropdown.Item>
+              <NavDropdown.Item onClick={() => navigate("/places")}>
+                Places
+              </NavDropdown.Item>
             </NavDropdown>
 
-            <Nav.Link href="#" disabled>
-              {/* {currentUser ? currentUser : "No auth user"}s */}
-            </Nav.Link>
+            {/* <Nav.Link href="#" disabled>
+              {currentUser ? currentUser : "No auth user"}s
+            </Nav.Link> */}
+            {/* <Form className="d-flex">
+              <Form.Control
+                type="search"
+                placeholder="Search"
+                className="me-2"
+                aria-label="Search"
+              />
+              <Button variant="outline-danger">Search</Button>
+            </Form> */}
           </Nav>
+
           <Button variant="outline-danger" onClick={() => navigate("/login")}>
             Log in
           </Button>
-          {/* <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form> */}
         </Navbar.Collapse>
       </Container>
     </Navbar>

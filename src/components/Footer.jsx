@@ -12,16 +12,16 @@ const Footer = () => {
         <div>
           <p>© 2020 Международный Университет Ала-Тоо</p>
           <div className="footer_links">
-            <a href="https://www.valvesoftware.com/ru/about">
+            <a href="https://www.instagram.com/alatoo.edu.kg/">
               <BsInstagram className="footer-icons" />
             </a>
-            <a href="https://www.facebook.com/Steam">
+            <a href="https://www.youtube.com/channel/UCRwPUKmeoiUausG3luv7d3Q">
               <BsYoutube className="footer-icons" />
             </a>
-            <a href="https://twitter.com/steam">
+            <a href="https://twitter.com/alatooedukg/">
               <BsTwitter className="footer-icons" />
             </a>
-            <a href="https://partner.steamgames.com">
+            <a href="https://www.facebook.com/AlaTooInternationalUniversity/">
               <BsFacebook className="footer-icons" />
             </a>
           </div>
