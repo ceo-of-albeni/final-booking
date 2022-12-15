@@ -1,5 +1,8 @@
 .footer {
   display: flex;
+  /* position: absolute;
+  bottom: 0;
+  width: 100%; */
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
@@ -7,7 +10,6 @@
 
 p {
   color: rgb(179, 179, 179);
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 14px;
 }
 
@@ -17,24 +19,92 @@ footer {
   background-color: #222b45;
 }
 
-.footer_links {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 1%;
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  z-index: -1;
 }
 
-.footer_links > a {
-  border-radius: 30%;
-  text-decoration: none;
+.icon {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-left: 12px;
+  margin-right: 12px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.icon::before,
+.icon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: all 0.25s ease;
+  border-radius: 30px;
+}
+.icon i {
+  position: relative;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  margin-top: 10px;
+
+  transition: all 0.25s ease;
+}
+.icon-fill::before {
+  transition-duration: 0.5s;
+  box-shadow: inset 0 0 0 1px rgb(171, 62, 153);
+}
+.icon-fill:hover::before {
+  box-shadow: inset 0 0 0 60px rgb(171, 62, 153);
+}
+.icon-enter::after {
+  box-shadow: inset 0 0 0 1px red;
+}
+.icon-enter::before {
+  border-radius: 0;
+  margin-left: -100%;
+  box-shadow: inset 0 0 0 60px red;
+}
+.icon-enter:hover::before {
+  margin-left: 0;
 }
 
-.footer-icons {
-  color: rgb(195, 194, 194);
+.icon-collapse::before {
+  border-radius: 0;
 }
-
-.footer-icons:hover {
-  color: white;
-  transition: 0.5s;
+.icon-collapse:hover::before {
+  box-shadow: inset 0 30px 0 0 rgb(59, 91, 251),
+    inset 0 -30px 0 0 rgb(59, 91, 251);
 }
-/* .footer_links > a:hover {
-} */
+.icon-collapse::after {
+  box-shadow: inset 0 0 0 1px rgb(59, 91, 251);
+}
+.icon-rotate {
+  box-shadow: inset 0 0 0 1px rgb(106, 194, 249);
+}
+.icon-rotate::after,
+.icon-rotate::before {
+  border: 0px solid transparent;
+}
+.icon-rotate:hover::before {
+  transition: border-top-width 0.3s ease, border-top-color 0.3s ease;
+  border-width: 60px;
+  border-top-color: rgb(106, 194, 249);
+}
+.icon-rotate:hover::after {
+  transition: border-left-width 0.3s ease, border-left-color 0.3s ease;
+  border-width: 60px;
+  border-left-color: rgb(106, 194, 249);
+}
+.icon-rotate:hover {
+  transition: background 0.001s ease 0.3s;
+  background: rgb(106, 194, 249);
+}
+.icon-rotate i {
+  z-index: 1;
+}

@@ -1,16 +1,25 @@
 {
   "places": [
     {
-      "title": "Football Field",
-      "image": "https://operations.nfl.com/media/4056/field-certification-hero-2019.jpg?rxy=0.49446494464944651,0.58888888888888891&width=1417&height=740&rnd=132193570660000000&quality=85",
-      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure id iste maxime et. Voluptatum beatae illum, repellat esse debitis",
-      "id": 8
-    },
-    {
-      "title": "Picnic Zones",
+      "title": "Picnic Zone",
       "image": "https://visitlakeiseo.info/wp-content/uploads/2020/10/Zone-004.jpg",
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure id iste maxime et. Voluptatum beatae illum, repellat esse debitis",
+      "location": "B block",
       "id": 9
+    },
+    {
+      "title": "Forest",
+      "image": "https://www.w3schools.com/css/img_forest.jpg",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure id iste maxime et. Voluptatum beatae illum, repellat esse debitis",
+      "location": "B block",
+      "id": 10
+    },
+    {
+      "title": "Place",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure id iste maxime et. Voluptatum beatae illum, repellat esse debitis",
+      "location": "B block",
+      "id": 12
     }
   ],
   "users": [

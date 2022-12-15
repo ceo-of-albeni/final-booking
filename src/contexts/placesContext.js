@@ -55,11 +55,16 @@ const PlaceContextProvider = ({ children }) => {
   }
 
   async function getOnePlace(id) {
-    let res = await axios(`${JSON_API_PLACES}/${id}`);
+    const { data } = await axios(`${JSON_API_PLACES}/${id}`);
     dispatch({
       type: "GET_ONE_PLACE",
-      payload: res.data,
+      payload: data,
     });
+    // let res = await axios(`${JSON_API_PLACES}/${id}`);
+    // dispatch({
+    //   type: "GET_ONE_PLACE",
+    //   payload: res.data,
+    // });
   }
 
   async function updatePlace(id, editedPlace) {

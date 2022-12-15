@@ -9,7 +9,6 @@ import AddPlace from "./components/places/AddPlace";
 import PlacesList from "./components/places/PlacesList";
 import Details from "./components/places/Details";
 import UpdatePlace from "./components/places/UpdatePlace";
-import PlacesPage from "./pages/PlacesPage";
 
 const Routing = () => {
   const PUBLIC_ROUTES = [
@@ -42,6 +41,11 @@ const Routing = () => {
       link: "/places/:id",
       element: <Details />,
       id: 6,
+    },
+    {
+      link: "/edit/:id",
+      element: <UpdatePlace />,
+      id: 7,
     },
   ];
   return (

@@ -10,29 +10,29 @@ const PlaceCard = ({ item }) => {
   const { deletePlace } = useContext(placesContext);
 
   return (
-    <div>
-      <Card style={{ width: "20rem" }}>
+    <div className="mx-4 mb-5">
+      <Card style={{ width: "22rem" }}>
         <Card.Img variant="top" src={item.image} height="200" />
         <Card.Body>
           <Card.Title>{item.title}</Card.Title>
-          <Card.Text>{item.description}</Card.Text>
+          <Card.Text style={{ height: "70px" }}>{item.description}</Card.Text>
           {/* <Card.Text>{item.category.title}</Card.Text> */}
           <Button
-            className="mx-1"
+            // className="ms-1"
             onClick={() => navigate(`/places/${item.id}`)}
-            variant="danger">
+            variant="primary">
             See
           </Button>
           <Button
-            className="mx-2"
+            className="ms-2"
             onClick={() => navigate(`/edit/${item.id}`)}
-            variant="danger">
+            variant="primary">
             Edit
           </Button>
           <Button
-            className="mx-2"
+            className="ms-2"
             onClick={() => deletePlace(item.id)}
-            variant="primary">
+            variant="danger">
             Delete
           </Button>
         </Card.Body>

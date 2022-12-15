@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { placesContext } from "../../contexts/placesContext";
 import PlaceCard from "./PlaceCard";
 import Pagination from "react-bootstrap/Pagination";
+import Footer from "../Footer";
 
 const PlacesList = () => {
   const { getPlaces, places, pages } = useContext(placesContext);
@@ -45,48 +46,57 @@ const PlacesList = () => {
   // }
 
   return (
-    <div className="d-flex flex-column align-items-center mt-5">
-      <h2
-        style={{
-          color: "grey",
-          fontFamily: "fantasy",
-        }}>
-        Places List
-      </h2>
+    <div>
+      <div
+        className="d-flex flex-column align-items-center mt-5"
+        style={{ marginBottom: "75px" }}>
+        <h2
+          style={{
+            color: "grey",
+            fontFamily: "fantasy",
+          }}>
+          Places List
+        </h2>
 
-      <div style={{ display: "flex", flexWrap: "wrap" }}>
-        {places?.map(item => (
-          <PlaceCard key={item.id} item={item} className="" />
-        ))}
-      </div>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+          }}>
+          {places?.map(item => (
+            <PlaceCard key={item.id} item={item} />
+          ))}
+        </div>
 
-      {/* <Pagination
+        {/* <Pagination
         count={count}
         page={page}
         onChange={handlePage}
         color="primary"
       /> */}
 
-      <Pagination>
-        <Pagination.Prev onClick={() => setCurrentPage(currentPage - 1)} />
+        <Pagination>
+          <Pagination.Prev onClick={() => setCurrentPage(currentPage - 1)} />
 
-        {getPagesCount().map(item =>
-          item === currentPage ? (
-            <Pagination.Item
-              active
-              key={item}
-              onClick={() => setCurrentPage(item)}>
-              {item}
-            </Pagination.Item>
-          ) : (
-            <Pagination.Item onClick={() => setCurrentPage(item)} key={item}>
-              {item}
-            </Pagination.Item>
-          )
-        )}
+          {getPagesCount().map(item =>
+            item === currentPage ? (
+              <Pagination.Item
+                active
+                key={item}
+                onClick={() => setCurrentPage(item)}>
+                {item}
+              </Pagination.Item>
+            ) : (
+              <Pagination.Item onClick={() => setCurrentPage(item)} key={item}>
+                {item}
+              </Pagination.Item>
+            )
+          )}
 
-        <Pagination.Next onClick={() => setCurrentPage(currentPage + 1)} />
-      </Pagination>
+          <Pagination.Next onClick={() => setCurrentPage(currentPage + 1)} />
+        </Pagination>
+      </div>
+      <Footer />
     </div>
   );
 };

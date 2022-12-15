@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { placesContext } from "../../contexts/placesContext";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Footer from "../Footer";
 
 const AddPlace = () => {
   // const { createPlace } = useContext(placesContext); //getCategories, categories,
@@ -13,6 +14,7 @@ const AddPlace = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
+  const [location, setLocation] = useState("");
   // const [category, setCategory] = useState("");
 
   // useEffect(() => {
@@ -28,7 +30,7 @@ const AddPlace = () => {
   //   createPlace(newPlace, navigate);
   // }
   function savePlace() {
-    if (!title || !image || !description) {
+    if (!title || !image || !description || !location) {
       alert("Some inputs are empty!");
       return;
     }
@@ -37,6 +39,7 @@ const AddPlace = () => {
       title,
       image,
       description,
+      location,
     };
 
     addPlace(newPlace);
@@ -44,54 +47,65 @@ const AddPlace = () => {
     setTitle("");
     setImage("");
     setDescription("");
+    setLocation("");
 
     navigate("/places");
   }
   return (
-    <div
-      className="d-flex flex-column align-items-center"
-      style={{ marginTop: "130px" }}>
-      <h2
-        style={{
-          fontFamily: "fantasy",
-        }}>
-        Add Place
-      </h2>
+    <div>
+      <div
+        className="d-flex flex-column align-items-center"
+        style={{ marginTop: "130px", height: "530px" }}>
+        <h2
+          style={{
+            fontFamily: "fantasy",
+          }}>
+          Add Place
+        </h2>
 
-      <Form.Control
-        style={{ width: "300px" }}
-        type="text"
-        placeholder="Title"
-        value={title}
-        onChange={e => setTitle(e.target.value)}
-      />
+        <Form.Control
+          style={{ width: "300px" }}
+          type="text"
+          placeholder="Title"
+          value={title}
+          onChange={e => setTitle(e.target.value)}
+        />
 
-      {/* <input
+        {/* <input
         type="text"
         placeholder="Title"
         value={title}
         onChange={e => setTitle(e.target.value)}
       /> */}
-      <br />
+        <br />
 
-      <Form.Control
-        style={{ width: "300px" }}
-        type="text"
-        placeholder="Description"
-        value={description}
-        onChange={e => setDescription(e.target.value)}
-      />
+        <Form.Control
+          style={{ width: "300px" }}
+          type="text"
+          placeholder="Description"
+          value={description}
+          onChange={e => setDescription(e.target.value)}
+        />
+        <br />
 
-      {/* <input
+        <Form.Control
+          style={{ width: "300px" }}
+          type="text"
+          placeholder="Location"
+          value={location}
+          onChange={e => setLocation(e.target.value)}
+        />
+
+        {/* <input
         className="my-1"
         type="text"
         placeholder="Description"
         value={description}
         onChange={e => setDescription(e.target.value)}
       /> */}
-      <br />
+        <br />
 
-      {/* <input
+        {/* <input
           type="text"
           placeholder="Category"
           value={category}
@@ -99,33 +113,43 @@ const AddPlace = () => {
         />
         <br /> */}
 
-      <Form.Control
+        {/* <Form.Control
         style={{ width: "300px" }}
         type="text"
         placeholder="URL"
         value={image}
         onChange={e => setImage(e.target.value)}
-      />
-
-      {/* <input
-        type="text"
-        placeholder="URL"
-        value={image}
-        onChange={e => setImage(e.target.value)}
       /> */}
-      <br />
 
-      {/* <input
+        {/* <input
+          size="small"
           type="file"
           accept="image/*"
           onChange={e => setImage(e.target.files[0])}
         /> */}
-      <br />
 
-      {/* <button onClick={savePlace}>Save Place</button> */}
-      <Button onClick={savePlace} variant="outline-danger">
-        Save Place
-      </Button>
+        <Form.Control
+          style={{ width: "300px" }}
+          type="text"
+          placeholder="URL"
+          value={image}
+          onChange={e => setImage(e.target.value)}
+        />
+        <br />
+
+        {/* <input
+          type="file"
+          accept="image/*"
+          onChange={e => setImage(e.target.files[0])}
+        /> */}
+        <br />
+
+        {/* <button onClick={savePlace}>Save Place</button> */}
+        <Button onClick={savePlace} variant="outline-danger">
+          Save Place
+        </Button>
+      </div>
+      <Footer />
     </div>
   );
 };

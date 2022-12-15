@@ -1,10 +1,9 @@
 import React, { useEffect, useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
+import "../styles/header.css";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 //my imports
 import { useNavigate } from "react-router-dom";
 import { authContext } from "../contexts/authContext";
@@ -31,7 +30,7 @@ function NavScrollExample() {
       variant="light"
       expand="lg">
       <Container fluid>
-        <Navbar.Brand onClick={() => navigate("/")}>
+        <Navbar.Brand onClick={() => navigate("/")} style={{marginLe}}>
           <img
             src="https://my.alatoo.edu.kg/images/logo_text.png"
             width="200"
@@ -41,17 +40,11 @@ function NavScrollExample() {
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
-            className="me-auto my-2 my-lg-0"
+            className="me-auto my-2 my-lg-0 "
             style={{ maxHeight: "100px" }}
             navbarScroll>
-            <NavDropdown title="Places" id="navbarScrollingDropdown">
-              <NavDropdown.Item onClick={() => navigate("/add")}>
-                Add Place
-              </NavDropdown.Item>
-              <NavDropdown.Item onClick={() => navigate("/places")}>
-                Places
-              </NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link onClick={() => navigate("/add")}>Add</Nav.Link>
+            <Nav.Link onClick={() => navigate("/places")}>Places</Nav.Link>
 
             {/* <Nav.Link href="#" disabled>
               {currentUser ? currentUser : "No auth user"}s
@@ -67,9 +60,15 @@ function NavScrollExample() {
             </Form> */}
           </Nav>
 
-          <Button variant="outline-danger" onClick={() => navigate("/login")}>
+          <div className="box-3" onClick={() => navigate("/login")}>
+            <div className="btn btn-three">
+              <span style={{ color: "white" }}>Log In</span>
+            </div>
+          </div>
+
+          {/* <Button variant="outline-danger" onClick={() => navigate("/login")}>
             Log in
-          </Button>
+          </Button> */}
         </Navbar.Collapse>
       </Container>
     </Navbar>
