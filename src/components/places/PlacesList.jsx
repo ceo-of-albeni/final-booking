@@ -32,20 +32,6 @@ const PlacesList = () => {
     getPlaces();
   }, [searchParams]);
 
-  // useEffect(() => {
-  //   setSearchParams({
-  //     page: currentPage,
-  //   });
-  // }, [currentPage]);
-
-  // function getPagesCount() {
-  //   let pageCountArr = [];
-  //   for (let i = 1; i < pages + 1; i++) {
-  //     pageCountArr.push(i);
-  //   }
-  //   return pageCountArr;
-  // }
-
   return (
     <div>
       <div
@@ -58,14 +44,6 @@ const PlacesList = () => {
           Places
         </h2>
 
-        {/* <div className="cards">
-          {products ? (
-            currentData().map(item => <ProductCard key={item.id} item={item} />)
-          ) : (
-            <h3>Loading...</h3>
-          )}
-        </div> */}
-
         <div className="d-flex justify-content-center flex-wrap">
           {places ? (
             currentData().map(item => <PlaceCard key={item.id} item={item} />)
@@ -76,26 +54,6 @@ const PlacesList = () => {
 
         <Pagination count={count} page={page} onChange={handlePage} />
 
-        {/* <Pagination>
-          <Pagination.Prev onClick={() => setCurrentPage(currentPage - 1)} />
-
-          {getPagesCount().map(item =>
-            item === currentPage ? (
-              <Pagination.Item
-                active
-                key={item}
-                onClick={() => setCurrentPage(item)}>
-                {item}
-              </Pagination.Item>
-            ) : (
-              <Pagination.Item onClick={() => setCurrentPage(item)} key={item}>
-                {item}
-              </Pagination.Item>
-            )
-          )}
-
-          <Pagination.Next onClick={() => setCurrentPage(currentPage + 1)} />
-        </Pagination> */}
       </div>
       <Footer />
     </div>
