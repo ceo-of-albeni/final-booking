@@ -36,12 +36,7 @@ const LoginPage = () => {
 
   return (
     <div>
-      <div className="login-form" style={{ height: "545px" }}>
-        {/* <img
-        src="https://st-1.akipress.org/st_all/bilim/9/1519540999.2.jpg"
-        alt=""
-        width="100"
-      /> */}
+      <div className="login-form" style={{ height: "548px" }}>
         <h2 className="mt-1">Login</h2>
         {error ? <h2>{error}</h2> : null}
         <br />
@@ -67,24 +62,22 @@ const LoginPage = () => {
               onChange={e => setPassword(e.target.value)}
               value={password}
             />
-            {/* <Form.Text className="text-muted">please enter password.</Form.Text> */}
           </Form.Group>
-          {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group> */}
-          {/* <Button
-            variant="outline-danger"
-            type="submit"
-            onClick={() => loginUser(email, password)}>
-            Done
-          </Button> */}
-          <a onClick={() => loginUser(email, password)} class="logbutton btn-5">
+
+          <a
+            onClick={() => loginUser(email, password)}
+            className="logbutton btn-5">
             Done
           </a>
-          <p className="mt-2">
-            Don't have an account yet? <a href="/register">Register</a>
-          </p>
         </Form>
+        <span className="mt-2">
+          Don't have an account yet?{"  "}
+          <a id="register_link" onClick={() => navigate("/register")}>
+            {" "}
+            Register
+          </a>
+        </span>
+
         <br />
       </div>
       <Footer />

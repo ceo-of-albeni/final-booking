@@ -4,3 +4,13 @@
   align-items: center;
   margin-top: 8%;
 }
+
+#register_link {
+  color: darkred;
+  text-decoration: underline;
+}
+#register_link:hover {
+  cursor: pointer;
+  color: rgb(247, 208, 208);
+  transition: 0.7s;
+}

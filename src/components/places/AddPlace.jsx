@@ -15,11 +15,6 @@ const AddPlace = () => {
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
   const [location, setLocation] = useState("");
-  // const [category, setCategory] = useState("");
-
-  // useEffect(() => {
-  //   getCategories();
-  // }, []);
 
   // function savePlace() {
   //   let newPlace = new FormData();
@@ -55,7 +50,7 @@ const AddPlace = () => {
     <div>
       <div
         className="d-flex flex-column align-items-center"
-        style={{ marginTop: "130px", height: "530px" }}>
+        style={{ marginTop: "130px", height: "533px" }}>
         <h2
           style={{
             fontFamily: "fantasy",
@@ -71,12 +66,6 @@ const AddPlace = () => {
           onChange={e => setTitle(e.target.value)}
         />
 
-        {/* <input
-        type="text"
-        placeholder="Title"
-        value={title}
-        onChange={e => setTitle(e.target.value)}
-      /> */}
         <br />
 
         <Form.Control
@@ -96,30 +85,7 @@ const AddPlace = () => {
           onChange={e => setLocation(e.target.value)}
         />
 
-        {/* <input
-        className="my-1"
-        type="text"
-        placeholder="Description"
-        value={description}
-        onChange={e => setDescription(e.target.value)}
-      /> */}
         <br />
-
-        {/* <input
-          type="text"
-          placeholder="Category"
-          value={category}
-          onChange={e => setCategory(e.target.value)}
-        />
-        <br /> */}
-
-        {/* <Form.Control
-        style={{ width: "300px" }}
-        type="text"
-        placeholder="URL"
-        value={image}
-        onChange={e => setImage(e.target.value)}
-      /> */}
 
         {/* <input
           size="small"
@@ -137,14 +103,6 @@ const AddPlace = () => {
         />
         <br />
 
-        {/* <input
-          type="file"
-          accept="image/*"
-          onChange={e => setImage(e.target.files[0])}
-        /> */}
-        <br />
-
-        {/* <button onClick={savePlace}>Save Place</button> */}
         <Button onClick={savePlace} variant="outline-danger">
           Save Place
         </Button>

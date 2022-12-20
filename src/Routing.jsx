@@ -1,14 +1,15 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 //user
-import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import Registration from "./pages/Registration";
 //places
+import HomePage from "./pages/HomePage";
 import AddPlace from "./components/places/AddPlace";
 import PlacesList from "./components/places/PlacesList";
 import Details from "./components/places/Details";
 import UpdatePlace from "./components/places/UpdatePlace";
+import About from "./pages/About";
 
 const Routing = () => {
   const PUBLIC_ROUTES = [
@@ -46,6 +47,11 @@ const Routing = () => {
       link: "/edit/:id",
       element: <UpdatePlace />,
       id: 7,
+    },
+    {
+      link: "/about",
+      element: <About />,
+      id: 8,
     },
   ];
   return (

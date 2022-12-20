@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { placesContext } from "../../contexts/placesContext";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import { Form, Button } from "react-bootstrap";
 import Footer from "../Footer";
 
 const UpdatePlace = () => {
-  const { onePlace, getOnePlace, updatePlace } = useContext(placesContext); //getCategories, categories
+  const { onePlace, getOnePlace, updatePlace } = useContext(placesContext);
 
   const { id } = useParams();
   const navigate = useNavigate();
@@ -16,11 +15,9 @@ const UpdatePlace = () => {
   // const [title, setTitle] = useState("");
   // const [description, setDescription] = useState("");
   // const [image, setImage] = useState("");
-  // const [category, setCategory] = useState("");
 
   useEffect(() => {
     getOnePlace(id);
-    // getCategories();
   }, []);
 
   useEffect(() => {
@@ -28,14 +25,12 @@ const UpdatePlace = () => {
     // if (onePlace) {
     // setTitle(onePlace.title);
     // setDescription(onePlace.description);
-    // setCategory(onePlace.category.id);
   }, [onePlace]);
 
   // function saveChanges() {
   //   let editedPlace = new FormData();
   //   editedPlace.append("title", title);
   //   editedPlace.append("description", description);
-  //   // editedPlace.append("category", category);
   //   editedPlace.append("image", image);
   //   updatePlace(id, editedPlace, navigate);
   // }
@@ -60,13 +55,13 @@ const UpdatePlace = () => {
     <div>
       <div
         className="d-flex flex-column align-items-center"
-        style={{ marginTop: "130px", height: "530px" }}>
-        <h2>Update Place</h2>
+        style={{ marginTop: "130px", height: "533px" }}>
+        <h2 style={{ fontFamily: "fantasy" }}>Update Place</h2>
 
         <Form.Control
           style={{ width: "300px" }}
           type="text"
-          value={place.title}
+          // value={place.title}
           placeholder="Title"
           name="title"
           onChange={handleInp}
@@ -77,32 +72,28 @@ const UpdatePlace = () => {
         <Form.Control
           style={{ width: "300px" }}
           type="text"
-          value={place.description}
+          // value={place.description}
           placeholder="Description"
           name="description"
           onChange={handleInp}
         />
-
         <br />
 
-        {/* <h3>CATEGORY BEFORE: {onePlace?.category.title}</h3>
-      <select value={category} onChange={e => setCategory(e.target.value)}>
-        <option>Choose category...</option>
-        {categories?.map(item => (
-          <option key={item.id} value={item.id}>
-            {item.title}
-          </option>
-        ))}
-      </select>
-      <br /> */}
+        <Form.Control
+          style={{ width: "300px" }}
+          type="text"
+          // value={place.location}
+          placeholder="Location"
+          name="location"
+          onChange={handleInp}
+        />
 
-        {/* <input type="file" accept="image/*" name="image" onChange={handleInp} /> */}
-        {/* <br /> */}
+        <br />
         <Form.Control
           style={{ width: "300px" }}
           type="text"
           name="image"
-          value={place.image}
+          // value={place.image}
           placeholder="URL"
           onChange={handleInp}
         />

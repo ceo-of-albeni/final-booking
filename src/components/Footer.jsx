@@ -1,13 +1,7 @@
 import React from "react";
 import "../styles/footer.css";
-import { BsInstagram } from "react-icons/bs";
-import { BsYoutube } from "react-icons/bs";
-import { BsTwitter } from "react-icons/bs";
-import { BsFacebook } from "react-icons/bs";
-// import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
-  // const navigate = useNavigate();
   return (
     <footer className="pt-2">
       <div className="footer">

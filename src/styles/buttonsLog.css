@@ -1,37 +1,11 @@
-/* * {
-  box-sizing: inherit;
-  transition-property: all;
-  transition-duration: 0.6s;
-  transition-timing-function: ease;
-} */
-
-/* a {
-  background: white;
-  border-bottom: 1px solid;
-  color: white;
-  line-height: 1.4;
-  padding: 0.25em;
-  text-decoration: none;
-} */
-/* a:hover {
-  background: white;
-  color: red;
-} */
-
 .logbutton {
   color: #fff;
   cursor: pointer;
   font-size: 16px;
   font-weight: 500;
   line-height: 45px;
-  /* margin: 0 0 2em; */
-  /* max-width: 160px; */
-  /* position: relative; */
   text-decoration: none;
-  /* text-transform: uppercase; */
-  /* width: 100%; */
   background: transparent;
-  /* border-bottom: 2px solid; */
   padding: 10px 20px;
 }
 

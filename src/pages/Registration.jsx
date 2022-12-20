@@ -1,6 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import Loader from "../components/Loader";
 import "../styles/loginNregister.css";
 import { authContext } from "../contexts/authContext";
@@ -38,7 +37,7 @@ const Registration = () => {
 
   return (
     <div>
-      <div className="login-form" style={{ height: "545px" }}>
+      <div className="login-form" style={{ height: "548px" }}>
         {/* <img
         src="https://st-1.akipress.org/st_all/bilim/9/1519540999.2.jpg"
         alt=""
@@ -90,7 +89,7 @@ const Registration = () => {
           </Button> */}
           <a
             onClick={() => createUser(email, password)}
-            class="logbutton btn-5">
+            className="logbutton btn-5">
             Done
           </a>
         </Form>

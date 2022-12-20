@@ -1,9 +1,10 @@
 body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  background-image: url(https://img.freepik.com/free-vector/grunge-paper-background_1048-10026.jpg?w=2000);
+  background-image: linear-gradient(to right, #fffbd5, #b20a2c);
 }
 
-h2 {
-  color: peru;
+h2,
+h1 {
+  color: rgb(97, 16, 16);
   font-weight: bolder;
 }

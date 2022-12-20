@@ -2,13 +2,27 @@ import React, { useEffect, useContext, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { placesContext } from "../../contexts/placesContext";
 import PlaceCard from "./PlaceCard";
-import Pagination from "react-bootstrap/Pagination";
+import Pagination from "@mui/material/Pagination";
 import Footer from "../Footer";
 
 const PlacesList = () => {
-  const { getPlaces, places, pages } = useContext(placesContext);
+  const { getPlaces, places } = useContext(placesContext);
   const [searchParams, setSearchParams] = useSearchParams();
-  const [currentPage, setCurrentPage] = useState(1);
+  const [page, setPage] = useState(1);
+
+  const itemsOnPage = 6;
+
+  const count = Math.ceil(places.length / itemsOnPage);
+
+  const handlePage = (e, p) => {
+    setPage(p);
+  };
+
+  function currentData() {
+    const begin = (page - 1) * itemsOnPage;
+    const end = begin + itemsOnPage;
+    return places.slice(begin, end);
+  }
 
   useEffect(() => {
     getPlaces();
@@ -18,64 +32,51 @@ const PlacesList = () => {
     getPlaces();
   }, [searchParams]);
 
-  useEffect(() => {
-    setSearchParams({
-      page: currentPage,
-    });
-  }, [currentPage]);
+  // useEffect(() => {
+  //   setSearchParams({
+  //     page: currentPage,
+  //   });
+  // }, [currentPage]);
 
-  function getPagesCount() {
-    let pageCountArr = [];
-    for (let i = 1; i < pages + 1; i++) {
-      pageCountArr.push(i);
-    }
-    return pageCountArr;
-  }
-  // const itemsOnPage = 3;
-
-  // const count = Math.ceil(places.length / itemsOnPage);
-
-  // const handlePage = (e, p) => {
-  //   setPage(p);
-  // };
-
-  // function currentData() {
-  //   const begin = (page - 1) * itemsOnPage;
-  //   const end = begin + itemsOnPage;
-  //   return places.slice(begin, end);
+  // function getPagesCount() {
+  //   let pageCountArr = [];
+  //   for (let i = 1; i < pages + 1; i++) {
+  //     pageCountArr.push(i);
+  //   }
+  //   return pageCountArr;
   // }
 
   return (
     <div>
       <div
         className="d-flex flex-column align-items-center mt-5"
-        style={{ marginBottom: "75px" }}>
+        style={{ marginBottom: "100px" }}>
         <h2
           style={{
-            color: "grey",
             fontFamily: "fantasy",
           }}>
-          Places List
+          Places
         </h2>
 
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-          }}>
-          {places?.map(item => (
-            <PlaceCard key={item.id} item={item} />
-          ))}
+        {/* <div className="cards">
+          {products ? (
+            currentData().map(item => <ProductCard key={item.id} item={item} />)
+          ) : (
+            <h3>Loading...</h3>
+          )}
+        </div> */}
+
+        <div className="d-flex justify-content-center flex-wrap">
+          {places ? (
+            currentData().map(item => <PlaceCard key={item.id} item={item} />)
+          ) : (
+            <h3>Loading...</h3>
+          )}
         </div>
 
-        {/* <Pagination
-        count={count}
-        page={page}
-        onChange={handlePage}
-        color="primary"
-      /> */}
+        <Pagination count={count} page={page} onChange={handlePage} />
 
-        <Pagination>
+        {/* <Pagination>
           <Pagination.Prev onClick={() => setCurrentPage(currentPage - 1)} />
 
           {getPagesCount().map(item =>
@@ -94,7 +95,7 @@ const PlacesList = () => {
           )}
 
           <Pagination.Next onClick={() => setCurrentPage(currentPage + 1)} />
-        </Pagination>
+        </Pagination> */}
       </div>
       <Footer />
     </div>

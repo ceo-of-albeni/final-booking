@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Routing from "./Routing";
 import AuthContextProvider from "./contexts/authContext";
@@ -11,7 +10,6 @@ const App = () => {
       <AuthContextProvider>
         <Header />
         <Routing />
-        {/* <Footer /> */}
       </AuthContextProvider>
     </PlacesContextProvider>
   );

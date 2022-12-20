@@ -15,24 +15,24 @@ const PlaceCard = ({ item }) => {
         <Card.Img variant="top" src={item.image} height="200" />
         <Card.Body>
           <Card.Title>{item.title}</Card.Title>
-          <Card.Text style={{ height: "70px" }}>{item.description}</Card.Text>
-          {/* <Card.Text>{item.category.title}</Card.Text> */}
+          <Card.Text style={{ height: "70px", color: "gray" }}>
+            {item.description}
+          </Card.Text>
           <Button
-            // className="ms-1"
             onClick={() => navigate(`/places/${item.id}`)}
-            variant="primary">
+            variant="outline-warning">
             See
           </Button>
           <Button
             className="ms-2"
             onClick={() => navigate(`/edit/${item.id}`)}
-            variant="primary">
+            variant="outline-warning">
             Edit
           </Button>
           <Button
             className="ms-2"
             onClick={() => deletePlace(item.id)}
-            variant="danger">
+            variant="outline-danger">
             Delete
           </Button>
         </Card.Body>
