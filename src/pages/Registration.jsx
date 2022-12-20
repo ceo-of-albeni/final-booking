@@ -27,10 +27,6 @@ const Registration = () => {
     handleRegister(formData, navigate);
   }
 
-  // useEffect(() => {
-  //   setError(false);
-  // }, []);
-
   if (loading) {
     return <Loader />;
   }
@@ -38,11 +34,6 @@ const Registration = () => {
   return (
     <div>
       <div className="login-form" style={{ height: "548px" }}>
-        {/* <img
-        src="https://st-1.akipress.org/st_all/bilim/9/1519540999.2.jpg"
-        alt=""
-        width="100"
-      /> */}
         <h2 className="mt-1">Sign Up</h2>
 
         <br />
@@ -68,7 +59,6 @@ const Registration = () => {
               onChange={e => setPassword(e.target.value)}
               value={password}
             />
-            {/* <Form.Text className="text-muted">please enter password.</Form.Text> */}
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -76,17 +66,7 @@ const Registration = () => {
               Password confirmation
             </Form.Label>
             <Form.Control type="password" placeholder="Password" />
-            {/* <Form.Text className="text-muted">please enter password.</Form.Text> */}
           </Form.Group>
-          {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Admin" />
-        </Form.Group> */}
-          {/* <Button
-            variant="outline-danger"
-            type="submit"
-            onClick={() => createUser(email, password)}>
-            Sign Up
-          </Button> */}
           <a
             onClick={() => createUser(email, password)}
             className="logbutton btn-5">
