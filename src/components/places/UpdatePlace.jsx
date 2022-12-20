@@ -12,43 +12,20 @@ const UpdatePlace = () => {
 
   const [place, setPlace] = useState(onePlace);
 
-  // const [title, setTitle] = useState("");
-  // const [description, setDescription] = useState("");
-  // const [image, setImage] = useState("");
-
   useEffect(() => {
     getOnePlace(id);
   }, []);
 
   useEffect(() => {
     setPlace(onePlace);
-    // if (onePlace) {
-    // setTitle(onePlace.title);
-    // setDescription(onePlace.description);
   }, [onePlace]);
 
-  // function saveChanges() {
-  //   let editedPlace = new FormData();
-  //   editedPlace.append("title", title);
-  //   editedPlace.append("description", description);
-  //   editedPlace.append("image", image);
-  //   updatePlace(id, editedPlace, navigate);
-  // }
-
   const handleInp = e => {
-    // if (e.target.name === "image") {
-    //   let obj = {
-    //     ...place,
-    //     image: e.target.files[0],
-    //   };
-    //   setPlace(obj);
-    // } else {
     let obj = {
       ...place,
       [e.target.name]: e.target.value,
     };
     setPlace(obj);
-    // }
   };
 
   return (
@@ -61,7 +38,6 @@ const UpdatePlace = () => {
         <Form.Control
           style={{ width: "300px" }}
           type="text"
-          // value={place.title}
           placeholder="Title"
           name="title"
           onChange={handleInp}
@@ -72,7 +48,6 @@ const UpdatePlace = () => {
         <Form.Control
           style={{ width: "300px" }}
           type="text"
-          // value={place.description}
           placeholder="Description"
           name="description"
           onChange={handleInp}
@@ -82,7 +57,6 @@ const UpdatePlace = () => {
         <Form.Control
           style={{ width: "300px" }}
           type="text"
-          // value={place.location}
           placeholder="Location"
           name="location"
           onChange={handleInp}
@@ -93,7 +67,6 @@ const UpdatePlace = () => {
           style={{ width: "300px" }}
           type="text"
           name="image"
-          // value={place.image}
           placeholder="URL"
           onChange={handleInp}
         />
