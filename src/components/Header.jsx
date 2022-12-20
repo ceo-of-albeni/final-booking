@@ -9,14 +9,6 @@ import { authContext } from "../contexts/authContext";
 function NavScrollExample() {
   const navigate = useNavigate();
 
-  // const { currentUser, checkAuth, handleLogout } = useContext(authContext);
-
-  // useEffect(() => {
-  //   if (localStorage.getItem("tokens")) {
-  //     checkAuth();
-  //   }
-  // }, []);
-
   return (
     <Navbar style={{ backgroundColor: "#f6b0b03a" }} variant="dark" expand="lg">
       <Container fluid>
