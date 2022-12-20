@@ -1,12 +1,10 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { placesContext } from "../../contexts/placesContext";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
+import {Button, Form} from "react-bootstrap";
 import Footer from "../Footer";
 
 const AddPlace = () => {
-  // const { createPlace } = useContext(placesContext); //getCategories, categories,
   const { addPlace } = useContext(placesContext);
 
   const navigate = useNavigate();
@@ -16,14 +14,6 @@ const AddPlace = () => {
   const [image, setImage] = useState("");
   const [location, setLocation] = useState("");
 
-  // function savePlace() {
-  //   let newPlace = new FormData();
-  //   newPlace.append("title", title);
-  //   newPlace.append("description", description);
-  //   // newPlace.append("category", category);
-  //   newPlace.append("image", image);
-  //   createPlace(newPlace, navigate);
-  // }
   function savePlace() {
     if (!title || !image || !description || !location) {
       alert("Some inputs are empty!");
@@ -86,13 +76,6 @@ const AddPlace = () => {
         />
 
         <br />
-
-        {/* <input
-          size="small"
-          type="file"
-          accept="image/*"
-          onChange={e => setImage(e.target.files[0])}
-        /> */}
 
         <Form.Control
           style={{ width: "300px" }}
