@@ -8,10 +8,6 @@ import Button from "react-bootstrap/Button";
 import "../styles/buttonsLog.css";
 
 const LoginPage = () => {
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
-
-  // const { login } = useAuth();
   const { handleLogin, error, setError, loading } = useContext(authContext);
 
   const navigate = useNavigate();
